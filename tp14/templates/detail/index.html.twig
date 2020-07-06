@@ -1,0 +1,23 @@
+ 
+
+{% block title %}Hello DetailController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+ <h1>Détail de l'étudiant: </h1>
+	<hr /> 
+	<b> id  :     {{ e.id      }}  </b><br />
+	<b> Nom :     {{ e.Nom     }}  </b><br />
+	<b> Prénom :  {{ e.Prenom  }}  </b><br />
+	<b> Note :    {{ e.Note    }}  </b><br />
+	<b> Sexe :    {{ e.Sexe    }}  </b><br />
+	<b> Email :    {{ e.Email    }}  </b><br />
+<div align="right">
+<a href ="{{path('modifier'  , {'id': e.id} )}}">Modifier un étudiant</a> |
+<a href ="{{path('supprimer' , {'id': e.id} )}}">Supprimer un étudiant</a>
+</div>
+{% endblock %}

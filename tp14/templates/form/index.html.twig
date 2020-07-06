@@ -1,0 +1,13 @@
+ 
+
+ 
+{% block body %} 
+ 
+ {{ include("Etudiant/formulaire.html.twig") }}
+ 
+  <div align="center">
+	<a href ="{{path('accueil')}}">Accueil</a> |
+	<a href ="{{path('liste')}}">Liste des étudiants</a>|
+	<a href ="{{path('form')}}">Ajouter un étudiant</a>  
+</div>
+{% endblock %}

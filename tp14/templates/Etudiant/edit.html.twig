@@ -1,0 +1,44 @@
+ 
+<head>
+	<meta charset="utf-8" />
+	<title>{% block title %}Edit Article{% endblock %}</title>
+	<link rel="stylesheet" type = "text/css" href ="{{asset('CSS/style.css')}}" />
+</head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+ 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+ 
+ </head>
+{% block body %}
+ 
+ <div class="container" style=" width:400px; height:540px; ">
+ {% for message in app.flashes('info') %}
+  <div class="alert alert-info">
+  {{ message }}
+  </div>
+{% endfor %}
+ {{ form_start(form) }}
+ {{form_label(form,'Nom')}}
+{{form_widget(form.Nom)}} 
+{{form_label(form,'Prénom')}}
+{{form_widget(form.Prenom)}}
+ {{form_label(form,'Note')}}
+{{form_widget(form.Note)}}
+{{form_label(form,'Sexe')}}
+{{form_widget(form.Sexe)}}
+{{form_label(form,'Email')}}
+{{form_widget(form.Email)}} 
+{{form_errors(form.Email)}}
+</br> 
+ {{ form_end(form) }}
+ </div>
+{% endblock %}

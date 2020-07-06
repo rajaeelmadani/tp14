@@ -1,0 +1,26 @@
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+ 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+{% block view %}
+	<h1>Gestion des étudiants </h1>
+	<hr /><br /><br />
+
+	Bienvenue dans la page d'acceuil de notre application Web. Vous pouvez gérer d'une manière très aisée la base de données des étudiants.
+	En accédant à la liste, vous pouvez voir le détail d'un étudiant et le modifier ou le supprimer. A partir du menu, vous pouvez ajouter un nouveau étudiant ou afficher toute la liste. Testez!!
+<br /><br /><br /> 
+<div align="center">
+	<a href ="{{path('accueil')}}">Accueil</a> |
+	<a href ="{{path('liste')}}">Liste des étudiants</a>|
+	<a href ="{{path('form')}}">Ajouter un étudiant</a>  
+</div>
+{% endblock %}

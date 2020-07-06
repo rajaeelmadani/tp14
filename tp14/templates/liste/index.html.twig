@@ -1,0 +1,50 @@
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+ 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+ 
+
+{% block title %}<center><h4>Liste des étudiants</h4></center>{% endblock %}</br>
+{% block body %}
+ 
+ 
+<table class="table">
+    <thead>
+	
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Sexe</th>
+        <th>Note</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+	{% for e in etd %}
+ <tr> 
+    <td><a href="{{path('detail', {'id': e.id})}}"> {{ e.id }} </a></td>
+    <td><a href="{{path('detail', {'id': e.id})}}">  {{ e.Nom }}</a> </td>
+    <td> <a href="{{path('detail', {'id': e.id})}}"> {{ e.Prenom}} </a></td>
+    <td> <a href="{{path('detail', {'id': e.id})}}"> {{ e.Sexe}} </a></td>
+    <td> <a href="{{path('detail', {'id': e.id})}}"> {{ e.Note}} </a></td>
+    <td> <a href="{{path('detail', {'id': e.id})}}"> {{ e.Email}} </a></td>
+ </tr>
+ {% endfor %}
+    </tbody>
+  </table>
+ <div align="center">
+	<a href ="{{path('accueil')}}">Accueil</a> |
+	<a href ="{{path('liste')}}">Liste des étudiants</a>|
+	<a href ="{{path('form')}}">Ajouter un étudiant</a>  
+</div>
+  
+{% endblock %}
